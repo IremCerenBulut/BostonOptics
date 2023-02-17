@@ -17,7 +17,7 @@ namespace ApplicationCore.Entities
 
         //navigation property
 
-        public Category Category { get; set; } = null!;
+        public Product Category { get; set; } = null!;
         public Brand Brand { get; set; } = null!;
 
 
