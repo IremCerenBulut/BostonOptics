@@ -4,6 +4,8 @@ global using Microsoft.AspNetCore.Identity;
 global using Microsoft.EntityFrameworkCore;
 global using ApplicationCore.Interfaces;
 global using ApplicationCore.Entities;
+global using Web.Interfaces;
+global using Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,13 @@ builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 
 builder.Services.AddDbContext<ShopContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("ShopContext")));
 
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
+
+
+builder.Services.AddScoped<IHomeViewModelService, HomeViewModelService>();
+
+
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
