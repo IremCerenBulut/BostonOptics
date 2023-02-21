@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
-    internal class EFRepository<T> : IRepository<T> where T : BaseEntity //class>interface>constrait
+    public class EFRepository<T> : IRepository<T> where T : BaseEntity //class>interface>constrait
     {
         private readonly ShopContext _db;
 

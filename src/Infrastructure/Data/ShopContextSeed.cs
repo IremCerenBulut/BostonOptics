@@ -39,6 +39,7 @@ namespace Infrastructure.Data
                 new Product() { Category = c3, Brand = b3, Price = 346.00m, PictureUri = "11.png", Name = "Prada Hot" },
                 new Product() { Category = c1, Brand = b4, Price = 540.00m, PictureUri = "12.png", Name = "Tom Ford FT1003" }
                 );
+            await db.SaveChangesAsync();
         }
     }
 }
