@@ -12,6 +12,7 @@ Add-Migration InitialCreate -context ShopContext -o Data/Migrations
 Update-Database -context ShopContext
 Add-Migration IdentityInitial -context AppIdentityDbContext -o Identity/Migrations 
 Update-Database -context AppIdentityDbContext
+
 ```
 ## Packages Installed
 ## Web
