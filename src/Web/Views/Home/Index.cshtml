@@ -36,19 +36,60 @@
 @{ var pi = Model.PaginationInfo;}
 <nav >
     <ul class="pagination justify-content-center">
-        <li class="page-item">
-            <a class="page-link" href="#" >
-                <span >&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#">
-                <span>&raquo;</span>
-            </a>
-        </li>
+        @if (pi.HasPrevious)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-route-pageId="@(pi.PageId-1)" categoryId="@Model.CategoryId" asp-route-brandId="@Model.BrandId">
+                    <span>&laquo;</span>
+                </a>
+            </li>
+        }
+        else
+        {
+            <li class="page-item">
+                <a class="page-link disabled">
+                    <span>&laquo;</span>
+                </a>
+            </li>
+        }
+
+        @foreach (var i in pi.PageNumbers)
+        {
+            if (i == -1)
+            {
+                <li class="page-item">
+                    <a class="page-link disabled">
+                        <span>&hellip;</span>
+                    </a>
+                </li>
+
+            }
+            else
+            {
+                <li class="page-item" @(i == pi.PageId ? "active" : "")>
+                    <a class="page-link" asp-route-pageId="@i" categoryId="@Model.CategoryId" asp-route-brandId="@Model.BrandId">@i</a>
+                </li>
+            }
+
+        }
+
+
+        @if (pi.HasNext)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-route-pageId="@(pi.PageId+1)" asp-route-categoryId="@Model.CategoryId" asp-route-brandId="@Model.BrandId">
+                    <span>&laquo;</span>
+                </a>
+            </li>
+        }
+        else
+        {
+            <li class="page-item">
+                <a class="page-link disabled">
+                    <span>&raquo;</span>
+                </a>
+            </li>
+        }
     </ul>
 </nav>
 
