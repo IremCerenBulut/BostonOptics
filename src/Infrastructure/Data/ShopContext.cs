@@ -20,6 +20,9 @@ namespace Infrastructure.Data
         public DbSet<Product> Products => Set<Product>();
         public DbSet<Basket> Baskets => Set<Basket>();
         public DbSet<BasketItem> BasketItems => Set<BasketItem>();
+        public DbSet<Order> Orders => Set<Order>();
+        public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //mevcut projedeki (Infrastructure) entity ayar dosyalarını bul ve uygula

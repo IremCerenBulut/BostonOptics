@@ -38,15 +38,25 @@ Install-Package Ardalis.Specification -v 6.1.0
 ```
 
 ## Useful Links
+
 ### Resources
+
 https://codepen.io/yigith/pen/PoOrWjX
+
+https://getbootstrap.com/docs/5.3/examples/checkout/
+
 ### Documentation
+
 https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/ 
 
 https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-6.0
+
 ### Github 
+
 https://github.com/dotnet-architecture/eShopOnWeb
+
 ### E-book
+
 https://aka.ms/webappebook
 
 
