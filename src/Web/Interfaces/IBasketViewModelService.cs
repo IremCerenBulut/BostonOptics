@@ -6,6 +6,10 @@ namespace Web.Interfaces
     {
         Task<BasketViewModel> GetBasketViewModelAsync();
         Task<BasketViewModel> AddItemToBasketAsync(int productId, int quantity);
+        Task EmtyBasketAsync(); 
+        Task DeleteBasketItemAsync(int productId);
+        Task UpdateBasketAsync(Dictionary<int, int> quantities);
+        Task TransferBasketIfNecessary();
 
     }
 }
